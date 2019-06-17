@@ -1,13 +1,10 @@
 <!DOCTYPE html >
-<%@taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>layout 后台大布局 - Layui</title>
     <link rel="stylesheet" href="../static/js/layui/css/layui.css"/>
-
-
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
@@ -15,9 +12,9 @@
         <div class="layui-logo">短租房</div>
         <!-- 头部区域（可配合layui已有的水平导航） -->
         <ul id="li1" class="layui-nav layui-layout-left">
-            <shiro:hasPermission name="kzt">
-            <li class="layui-nav-item kzt" ><a href="">控制台</a></li>
-            </shiro:hasPermission>
+            <@shiro.hasPermission name="kzt">
+                <li class="layui-nav-item kzt" ><a href="">控制台</a></li>
+            </@shiro.hasPermission>
             <li class="layui-nav-item"><a href="">商品管理</a></li>
             <li class="layui-nav-item"><a href="">用户</a></li>
             <li class="layui-nav-item">

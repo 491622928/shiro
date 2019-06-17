@@ -52,7 +52,7 @@
         <dependency>
             <groupId>net.mingsoft</groupId>
             <artifactId>shiro-freemarker-tags</artifactId>
-            <version>1.0.0</version>
+            <version>0.1</version>
         </dependency>
         <!--热部署-->
         <dependency>

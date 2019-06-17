@@ -24,13 +24,14 @@ spring:
 
   freemarker:
 #    关闭缓存，及时刷新
-    cache: true
+    cache: false
     charset: UTF-8
     suffix: .ftl
     content-type: text/html
     request-context-attribute: request
     template-loader-path: classpath:/templates/
     enabled: true
+
 
   devtools:
     restart:
