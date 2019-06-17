@@ -1,0 +1,43 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/short_rental?useSSL=false&characterEncoding=utf-8&serverTimezone=GMT%2B8&amp
+    username: yyz
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    platform: mysql
+    druid:
+      initial-size: 5
+      filters: stat,slf4j
+      min-idle: 5
+      max-active: 20
+      max-wait: 60000
+      time-between-connect-error-millis: 60000
+      test-on-return: false
+      test-on-borrow: false
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 1 FROM DUAL
+      test-while-idle: true
+      filter:
+          stat:
+            log-slow-sql: true
+
+  freemarker:
+#    关闭缓存，及时刷新
+    cache: true
+    charset: UTF-8
+    suffix: .ftl
+    content-type: text/html
+    request-context-attribute: request
+    template-loader-path: classpath:/templates/
+    enabled: true
+
+  devtools:
+    restart:
+#      热部署生效
+      enabled: true
+#      设置重启目录
+      additional-paths: src/main/java
+
+server:
+  port: 8081
